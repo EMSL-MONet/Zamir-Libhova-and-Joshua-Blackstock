@@ -1,0 +1,5 @@
+Sample_Name,roi_volume_voxel,voxel_size_um3,connected_pores_percent,pore_diameter_min_mm,pore_diameter_max_mm,pore_diameter_mean_mm,pore_diameter_median_mm,pore_diameter_variance_mm,pore_volume_mean_mm3,total_pore_volume_percent,permeability_x_um2,flow_rate_x_um3_per_sec,tortuosity_x,permeability_y_um2,flow_rate_y_um3_per_sec,tortuosity_y,permeability_z_um2,flow_rate_z_um3_per_sec,tortuosity_z,rep
+60880_1_BTM,2348935016.0,0.0381,94.508606,0.0473,32.2364044,0.065907076,0.0473,0.003,0.0141,14.235,1130.0,17400.0,1.709916538,621.0,10200.0,1.8163341,1020.0,9780.0,1.6408457,1
+60880_1_TOP,2348935016.0,0.0381,83.790858,0.0473,25.273098,0.086834863,0.0601,0.0111,0.0408,7.73693,968.0,14900.0,1.598864467,774.0,12700.0,1.6045041,0.759,7.22,1.7952603,1
+60880_4_BTM,2348935016.0,0.0381,,0.0473,9.9802351,0.070167512,0.0489,0.00421,0.0055,1.40517,,,,,,,,,,1
+60880_4_TOP,2348935016.0,0.0381,20.846633,,,,,,,2.74499,0.0436,0.48,1.479515918,1680.0,18600.0,1.2411911,0.366,4.7,1.1283076,1
