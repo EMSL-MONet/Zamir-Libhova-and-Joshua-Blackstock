@@ -9,10 +9,6 @@ library(tidyverse)
 library(vegan)
 library(ggrepel)
 library(stringr)
-
-
-# Note: Ensure you download the file from Google Drive before beginning 
-
 # ===== Load MAOM data from Google Drive =====
 
 import_files = function(FILEPATH){
