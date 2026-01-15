@@ -3,8 +3,8 @@ Blocks:  strata
 Permutation: free
 Number of permutations: 63
 
-adonis2(formula = ft_mat_pa ~ Clay_Mineralogy * Depth, data = sample_key %>% mutate(Depth = as.character(Depth)), permutations = 999, method = "jaccard", strata = sample_key$Core_ID)
+adonis2(formula = ft_mat_pa ~ mineralogy_class * Depth, data = sample_key %>% mutate(Depth = as.character(Depth)), permutations = 999, method = "jaccard", strata = sample_key$Core_ID)
          Df SumOfSqs      R2      F Pr(>F)
-Model     9  1.39107 0.66661 0.4443    0.5
-Residual  2  0.69571 0.33339              
+Model     5  0.77275 0.37031 0.7057  0.875
+Residual  6  1.31403 0.62969              
 Total    11  2.08678 1.00000              
