@@ -5,6 +5,6 @@ Number of permutations: 63
 
 adonis2(formula = ft_mat_pa ~ Clay_Mineralogy * Depth, data = sample_key %>% mutate(Depth = as.character(Depth)), permutations = 999, method = "jaccard", strata = sample_key$Core_ID)
          Df SumOfSqs      R2      F Pr(>F)
-Model     5   1.0293 0.49325 1.1681  0.125
-Residual  6   1.0575 0.50675              
-Total    11   2.0868 1.00000              
+Model     9  1.39107 0.66661 0.4443    0.5
+Residual  2  0.69571 0.33339              
+Total    11  2.08678 1.00000              

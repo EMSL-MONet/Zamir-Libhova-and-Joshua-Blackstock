@@ -85,10 +85,12 @@ sample_key <- sample_key %>%
   mutate(
     Clay_Mineralogy = replace_na(Clay_Mineralogy, "Unknown"),
     Site_Name       = replace_na(Site_Name, "Unknown"),
-    Core_ID         = replace_na(Core_ID, paste0(Proposal_ID, "_", Sampling_Set)),
+    # FIX: vectorized NA replacement
+    Core_ID         = if_else(is.na(Core_ID),
+                              paste0(Proposal_ID, "_", Sampling_Set),
+                              Core_ID),
     Depth           = factor(Depth, levels = c("TOP", "BTM"), ordered = TRUE)
   )
-
 # ---- Long format: formula presence per sample ----
 # Assumes 0/1 (presence/absence). If your matrix is intensities, this still works,
 # but you may want to treat >0 as present and/or weight summaries by intensity.
@@ -225,10 +227,17 @@ ggsave(file.path(out_dir, "03_VK_density_mineralogy_depth.png"),
 
 # Optional: VK colored by class, but sampled down for readability
 set.seed(1)
+
+
 vk_sample <- vk_base %>%
   group_by(sample_name) %>%
-  slice_sample(n = min(800, n())) %>%
-  ungroup()
+  mutate(.rn = row_number()) %>%
+  # shuffle within group
+  slice_sample(prop = 1) %>%
+  # keep first 800 (or fewer if group smaller)
+  slice_head(n = 800) %>%
+  ungroup() %>%
+  select(-.rn)
 
 p_vk_class <- ggplot(vk_sample, aes(x = OC, y = HC, color = .data[[class_col]])) +
   geom_point(alpha = 0.35, size = 0.8) +
